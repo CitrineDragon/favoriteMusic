@@ -6,7 +6,7 @@ const TodoSchema = new mongoose.Schema({
     required: true,
   },
   todoArtist: {
-    type: Boolean,
+    type: String,
     required: true,
   },
   userId: {
