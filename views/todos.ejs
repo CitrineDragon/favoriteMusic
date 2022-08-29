@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mainStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="login">
+      <section class="box">
+        <a href="/logout">Logout</a>
+      </section>
+    </section>
+    <main>
+      <section class="hero">
+        <h1>My Music</h1>
+      </section>
+    </main>
+
+    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+
+    <form action="/todos/createTodo" method="POST">
+      <p>
+        Song Name:
+        <input type="text" placeholder="Enter Song Name" name="todoSong" />
+      </p>
+      <p>
+        Artist Name:
+        <input type="text" placeholder="Enter Band Name" name="todoArtist" />
+      </p>
+      <input class="submit" type="submit" />
+    </form>
+
+    <ul>
+      <% todos.forEach( el => { %>
+      <li class="todoItem" data-id="<%=el._id%>">
+        <span class="del"> Delete </span>
+      </li>
+      <% }) %>
+    </ul>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
